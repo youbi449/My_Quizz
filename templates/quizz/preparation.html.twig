@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{categorie.name}}{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+  <h1 class="display-4">Welcome</h1>
+  <p class="lead">You chose <b>{{categorie.name}}</b></p>
+  <hr class="my-4">
+  <p>The quizz is about to begin</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/category/{{categorie.id}}/question/1" role="button">Start</a>
+  </p>
+</div>
+{% endblock %}

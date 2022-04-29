@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ouais lourd
+{% endblock %}
+
+{% block body %}
+	{% for message in app.flashes('success') %}
+		<div class="alert alert-success">
+			{{ message }}
+		</div>
+	{% endfor %}
+
+	{% for message in app.flashes('error') %}
+		<div class="alert alert-danger">
+			{{ message }}
+		</div>
+	{% endfor %}
+	
+	<form method="post" class="quizz" action="/category/{{id_category}}/question/{{actual_page }}/check">
+		{{question[actual_page].question}}
+		<br>
+		{% set value = 1 %}
+		{% for reponses in reponse %}
+
+			<br>
+			<label for="{{value}}">{{reponses.reponse}}:</label>
+			<input type="radio" id="{{value}}" name="reponse" value="{{reponses.id}}">
+			{% set value = value + 1 %}
+		{% endfor %}
+		<button type="submit" class="btn btn-primary">Check</button>
+	</form>
+
+{% endblock %}

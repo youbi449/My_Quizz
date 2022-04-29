@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Done {% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+  <h1 class="display-4"></h1>
+  <p class="lead">Congratulation You've reached the end of <b>{{categorie.name}}</b>. You're score: {{score}}</p>
+  <hr class="my-4">
+  <p>I hope you enjoyed this quizz click in the button bellow to return to the main menu</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/home" role="button">Home</a>
+  </p>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Youbi Quizz
+{% endblock %}
+
+{% block body %}
+	{% for message in app.flashes('mail_success') %}
+		<div class="alert alert-success width">
+			{{ message }}
+		</div>
+	{% endfor %}
+    <h3>Category</h3>
+    <ul class="category">
+        {% for category in categorie %}
+            <li>
+                <a href="/category/{{category.id}}">{{category.name}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

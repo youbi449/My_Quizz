@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Mail
+{% endblock %}
+
+{% block body %}
+	<form method="post" action="/account/edit/mail/submit">
+		<label for="actual">Actual Mail:
+		</label>
+		<p id="actual">{{mail}}</p>
+		<input type="text" name="mail" placeholder="New Mail">
+		<button type="submit" class="btn btn-primary">Change</button>
+	</form>
+{% endblock %}
